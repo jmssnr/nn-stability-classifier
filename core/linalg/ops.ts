@@ -12,6 +12,9 @@ export const dot = (A: Matrix, x: Vector): Vector =>
 export const outer = (v: Vector, u: Vector): Matrix =>
   v.map((vi) => u.map((ui) => vi * ui));
 
+export const hadamard = (v: Vector, u: Vector): Vector =>
+  v.map((vi, idx) => vi * u[idx]);
+
 export const scale = (scaler: number, x: Vector): Vector =>
   x.map((xi) => scaler * xi);
 
