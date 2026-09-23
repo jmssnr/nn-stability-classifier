@@ -13,3 +13,7 @@ export function forward(network: Network, input: Vector) {
   }
   return { z, a };
 }
+
+export function backward(network: Network, z: Array<Vector>, a: Array<Vector>) {
+  
+}
