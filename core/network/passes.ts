@@ -41,3 +41,8 @@ export function backward(
 
   return { gradW, gradB };
 }
+
+export function predict(network: Network, input: Vector) {
+  const { a } = forward(network, input);
+  return a[a.length - 1];
+}
