@@ -62,8 +62,16 @@ test("creates random matrix", () => {
   expect(cols).toEqual(5);
 });
 
-test("creates random matrix", () => {
+test("creates random vector", () => {
   const x = vector(5);
   const rows = x.length;
+  console.log(x);
   expect(rows).toEqual(5);
+});
+
+test("creates seeded random vector", () => {
+  const x = vector(3, 0.23);
+  expect(x).toEqual([
+    0.9720739373005927, -0.15737878531217575, -0.45048580365255475,
+  ]);
 });
