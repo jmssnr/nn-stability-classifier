@@ -8,3 +8,7 @@ export type Dataset = {
   get: (idx: number) => Example;
   length: number;
 };
+
+export type TrainingConfig = {
+  minibatchSize: number;
+};
