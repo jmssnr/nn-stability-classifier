@@ -1,3 +1,4 @@
+import { hadamard } from "@/core/linalg/ops";
 import { backward, forward } from "@/core/network/passes";
 import { Network } from "@/core/network/types";
 import { Optimizer } from "@/core/optimizers/types";
@@ -34,6 +35,11 @@ export function epoch(
           sumGradB[i][r] += gradB[i][r];
         }
       }
+      const out = a[a.length - 1];
+      epochLoss += -hadamard(out, example.label).reduce(
+        (acc, curr) => (acc += Math.log(curr)),
+        0,
+      );
     }
 
     network = optimizer(network, sumGradW, sumGradB);

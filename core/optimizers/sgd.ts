@@ -9,7 +9,7 @@ export function sgd(learningRate: number) {
         row.map((w, c) => w - learningRate * gradW[i][r][c]),
       );
       layer.biases = layer.biases.map((b, r) => b - learningRate * gradB[i][r]);
-      i + 1;
+      i += 1;
     }
     return network;
   };
